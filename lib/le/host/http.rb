@@ -132,7 +132,10 @@ module Le
           @logger_console.add(Logger::Severity::UNKNOWN, message)
         end
 
-        if message.scan(/\n/).empty?
+        # If the message contains embedded newlines, prefix the partxh with
+        # some random data - not sure why.  Strip it first so that we don't
+        # trigger this logic if a single, trailing newline
+        if message.strip.scan(/\n/).empty?
           @queue << "#{ @token } #{ message } \n"
         else
           @queue << "#{ message.gsub(/^/, "\1#{ @token } [#{ random_message_id }]") }\n"
