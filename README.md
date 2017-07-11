@@ -1,6 +1,19 @@
 Logging to Logentries in Ruby
 =============================
 
+Fork Info
+---------
+This fork exists to address
+[Issue 50](https://github.com/rapid7/le_ruby/issues/50).  A fork seems
+better than 30+ line monkey patch - IMO.
+
+Usage (from Bundler):
+```
+gem "le", :git => 'https://github.com/cander/le_ruby', :branch => 'newline-handling'
+```
+
+---
+
 [![Build Status](https://travis-ci.org/rapid7/le_ruby.svg?branch=master)](https://travis-ci.org/rapid7/le_ruby)
 This is a Logentries library for logging from Ruby platforms, including Heroku.
 
